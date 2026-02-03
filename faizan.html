@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I'm Sorry 💔</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 15px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 22px 18px;
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      color: #e25555;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    p {
+      color: #444;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .gifs img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 15px;
+      margin: 10px auto;
+      display: block;
+    }
+
+    .music button,
+    .forgive {
+      width: 100%;
+      margin: 8px 0;
+      padding: 12px;
+      border: none;
+      border-radius: 25px;
+      background: #e25555;
+      color: #fff;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .music button:hover,
+    .forgive:hover {
+      background: #c63d3d;
+    }
+
+    .footer {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #888;
+    }
+
+    /* Floating Hearts */
+    .hearts div {
+      position: fixed;
+      bottom: 0;
+      font-size: 18px;
+      animation: floatUp linear forwards;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      to {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
+    }
+
+    /* Small devices extra polish */
+    @media (max-width: 360px) {
+      h1 {
+        font-size: 1.3rem;
+      }
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hearts"></div>
+
+  <div class="card">
+    <h1>I'm Really Sorry, Guriya 🥺❤️</h1>
+
+    <p>
+      I know I made a mistake, and I'm truly sorry from the bottom of my heart.
+      Please forgive me, <strong>Guriya</strong>. You really mean a lot to me ❤️
+      <br><br>
+
+      <strong>Roman Urdu:</strong><br>
+      Mujh se ghalti ho gayi, dil se maafi chahta hoon. Tum mere liye bohat special ho 💔
+      <br><br>
+
+      <strong>Urdu:</strong><br>
+      مجھ سے واقعی غلطی ہو گئی ہے، میں دل سے معافی چاہتا ہوں۔ تم میرے لیے بہت اہم ہو ❤️
+      <br><br>
+
+      <em>“Rooh meri nu seene la, tenu ek ek dard sunawa…”</em>
+    </p>
+
+    <div class="music">
+      <audio id="bgMusic" loop>
+        <source src="Ranjha.mp3" type="audio/mpeg">
+      </audio>
+      <button onclick="playMusic()">▶ Play Music (Ranjha – Noor Chahal)</button>
+    </div>
+
+    <div class="gifs">
+      <img src="https://media.giphy.com/media/ROF8OQvDmxytW/giphy.gif" alt="Sorry Bear">
+      <img src="https://media.giphy.com/media/3ohA2ZD9EkeK2AyfdK/giphy.gif" alt="Cute Sorry">
+    </div>
+
+    <button class="forgive" onclick="forgive()">💖 Forgive Me</button>
+
+    <div class="footer">
+      Made with endless love just for you, Guriya 💕
+    </div>
+  </div>
+
+  <script>
+    function playMusic() {
+      document.getElementById("bgMusic").play();
+    }
+
+    function forgive() {
+      alert("Thank you ❤️ You just made my heart smile, Guriya 🌸");
+    }
+
+    const heartsContainer = document.querySelector('.hearts');
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (3 + Math.random() * 3) + 's';
+      heartsContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }, 500);
+  </script>
+
+</body>
+</html>
